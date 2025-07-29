@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xác nhận & Thanh toán</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: auto;
+      background: #f8f8f8;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .box {
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      flex: 1 1 300px;
+    }
+    .box h3 {
+      margin-top: 0;
+    }
+    .row {
+      margin: 8px 0;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .total {
+      font-size: 20px;
+      color: red;
+      font-weight: bold;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #f9a825;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #e68a00;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>XÁC NHẬN & THANH TOÁN</h2>
+
+<div class="container">
+  <div class="box">
+    <h3>Thông tin mua hàng</h3>
+    <div class="row"><span class="label">Họ tên:</span> Vagg Shg</div>
+    <div class="row"><span class="label">Email:</span> vuongkhaithus827@gmail.com</div>
+    <div class="row"><span class="label">SĐT:</span> (+84) 0985621131</div>
+  </div>
+
+  <div class="box">
+    <h3>Thanh toán</h3>
+    <div class="row"><span class="label">Sự kiện:</span> Giải chạy Color Run EcoLakes 2025</div>
+    <div class="row">5km (1 vé người lớn) – <strong>450,000đ</strong></div>
+    <div class="row"><strong>Tổng thanh toán: <span class="total">450,000đ</span></strong></div>
+
+    <div class="row"><strong>Phương thức thanh toán:</strong></div>
+    <ul>
+      <li>Quét mã QR ngân hàng</li>
+      <li>MoMo / ZaloPay</li>
+      <li>Chuyển khoản</li>
+    </ul>
+
+    <div class="row">
+      <input type="checkbox" checked> Tôi đã đọc và đồng ý với các điều khoản
+    </div>
+
+    <button class="btn">Tôi đã chuyển khoản</button>
+  </div>
+
+  <div class="box" style="flex: 1 1 100%">
+    <h3>Thông tin cá nhân</h3>
+    <div class="row"><span class="label">Họ tên:</span> Vagg Shg</div>
+    <div class="row"><span class="label">Email:</span> vuongkhaithus827@gmail.com</div>
+    <div class="row"><span class="label">SĐT:</span> (+84) 0985621131</div>
+    <div class="row"><span class="label">Ngày sinh:</span> 10/10/1978</div>
+    <div class="row"><span class="label">Giới tính:</span> Nam</div>
+    <div class="row"><span class="label">CCCD:</span> P02923609</div>
+    <div class="row"><span class="label">Loại vé:</span> 5km (1 vé người lớn)</div>
+    <div class="row"><span class="label">Tỉnh:</span> Đồng Tháp</div>
+    <div class="row"><span class="label">Phường/xã:</span> Phường Hồng Ngự</div>
+    <div class="row"><span class="label">Địa chỉ:</span> TÂN HÒA</div>
+  </div>
+</div>
+
+</body>
+</html>
