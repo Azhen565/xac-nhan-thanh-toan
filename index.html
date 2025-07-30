@@ -1,109 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Xác nhận & Thanh toán</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xác nhận đăng ký</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: auto;
-      background: #f8f8f8;
-      padding: 20px;
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .box {
-      background: #fff;
-      padding: 20px;
-      border: 1px solid #ddd;
-      flex: 1 1 300px;
-    }
-    .box h3 {
-      margin-top: 0;
-    }
-    .row {
-      margin: 8px 0;
-    }
-    .label {
-      font-weight: bold;
-    }
-    .total {
-      font-size: 20px;
-      color: red;
-      font-weight: bold;
-    }
-    .btn {
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background-color: #f9a825;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .btn:hover {
-      background-color: #e68a00;
-    }
-    ul {
-      padding-left: 20px;
-    }
+    body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
+    h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    label { display: block; margin-top: 10px; }
+    input, select { padding: 8px; width: 100%; max-width: 400px; margin-top: 4px; }
+    .section { margin-bottom: 30px; }
+    .total { font-weight: bold; color: green; }
+    button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
   </style>
 </head>
 <body>
+  <h1>Xác nhận thông tin đăng ký</h1>
 
-<h2>XÁC NHẬN & THANH TOÁN</h2>
+  <div class="section">
+    <h2>1. Thông tin mua hàng</h2>
+    <label for="distance">Cự ly:</label>
+    <select id="distance">
+      <option value="229000">5km - 229.000đ</option>
+      <option value="259000">10km - 259.000đ</option>
+      <option value="291000">21km - 291.000đ</option>
+    </select>
 
-<div class="container">
-  <div class="box">
-    <h3>Thông tin mua hàng</h3>
-    <div class="row"><span class="label">Họ tên:</span> Vagg Shg</div>
-    <div class="row"><span class="label">Email:</span> vuongkhaithus827@gmail.com</div>
-    <div class="row"><span class="label">SĐT:</span> (+84) 0985621131</div>
+    <label for="children">Số trẻ em kèm theo:</label>
+    <input type="number" id="children" min="0" value="0" />
   </div>
 
-  <div class="box">
-    <h3>Thanh toán</h3>
-    <div class="row"><span class="label">Sự kiện:</span> Giải chạy Color Run EcoLakes 2025</div>
-    <div class="row">5km (1 vé người lớn) – <strong>450,000đ</strong></div>
-    <div class="row"><strong>Tổng thanh toán: <span class="total">450,000đ</span></strong></div>
+  <div class="section">
+    <h2>2. Thông tin cá nhân</h2>
+    <label for="name">Họ và tên:</label>
+    <input type="text" id="name" />
 
-    <div class="row"><strong>Phương thức thanh toán:</strong></div>
-    <ul>
-      <li>Quét mã QR ngân hàng</li>
-      <li>MoMo / ZaloPay</li>
-      <li>Chuyển khoản</li>
-    </ul>
+    <label for="email">Email:</label>
+    <input type="email" id="email" />
 
-    <div class="row">
-      <input type="checkbox" checked> Tôi đã đọc và đồng ý với các điều khoản
-    </div>
-
-    <button class="btn">Tôi đã chuyển khoản</button>
+    <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" />
   </div>
 
-  <div class="box" style="flex: 1 1 100%">
-    <h3>Thông tin cá nhân</h3>
-    <div class="row"><span class="label">Họ tên:</span> Vagg Shg</div>
-    <div class="row"><span class="label">Email:</span> vuongkhaithus827@gmail.com</div>
-    <div class="row"><span class="label">SĐT:</span> (+84) 0985621131</div>
-    <div class="row"><span class="label">Ngày sinh:</span> 10/10/1978</div>
-    <div class="row"><span class="label">Giới tính:</span> Nam</div>
-    <div class="row"><span class="label">CCCD:</span> P02923609</div>
-    <div class="row"><span class="label">Loại vé:</span> 5km (1 vé người lớn)</div>
-    <div class="row"><span class="label">Tỉnh:</span> Đồng Tháp</div>
-    <div class="row"><span class="label">Phường/xã:</span> Phường Hồng Ngự</div>
-    <div class="row"><span class="label">Địa chỉ:</span> TÂN HÒA</div>
-  </div>
-</div>
+  <div class="section">
+    <h2>3. Thanh toán</h2>
+    <p class="total">Tổng tiền: <span id="total">229.000đ</span></p>
 
+    <label>Phương thức thanh toán:</label>
+    <select id="payment">
+      <option value="qr">Chuyển khoản qua QR</option>
+      <option value="bank">Chuyển khoản ngân hàng</option>
+    </select>
+  </div>
+
+  <button onclick="confirm()">Xác nhận thông tin</button>
+
+  <script>
+    const distance = document.getElementById("distance");
+    const children = document.getElementById("children");
+    const totalDisplay = document.getElementById("total");
+
+    function updateTotal() {
+      const base = parseInt(distance.value);
+      const childCost = parseInt(children.value || 0) * 100000;
+      const total = base + childCost;
+      totalDisplay.textContent = total.toLocaleString('vi-VN') + "đ";
+    }
+
+    distance.addEventListener("change", updateTotal);
+    children.addEventListener("input", updateTotal);
+
+    function confirm() {
+      alert("Thông tin của bạn đã được xác nhận!
+Cảm ơn bạn đã đăng ký.");
+    }
+  </script>
 </body>
 </html>
